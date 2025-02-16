@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun ChatFooter(
@@ -37,7 +38,13 @@ fun ChatFooter(
     {
         OutlinedTextField(
             value = inputText, onValueChange = { inputText = it },
-            placeholder = { Text(text = "Type a message", color = Color.Black) },
+            placeholder = {
+                Text(
+                    text = "Type a message",
+                    color = Color.Black,
+                    style = TextStyle(fontSize = 16.sp)
+                )
+            },
             modifier = Modifier.weight(1f).padding(end = 10.dp),
 //                .background(Color.Gray),
             singleLine = true,
